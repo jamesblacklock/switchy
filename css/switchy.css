@@ -78,7 +78,7 @@
 {
 	background-image: linear-gradient(#fff, #eee);
 	position: absolute;
-	border-radius: 3px;
+	border-radius: 2px;
 	width: 33.3333%;
 	height: 100%;
 	left: 33.3333%;
@@ -136,7 +136,7 @@
 }
 .switchy-md .switchy-handle
 {
-	border-radius: 3px;
+	border-radius: 2px;
 }
 .switchy-md .switchy-on,
 .switchy-md .switchy-off,
