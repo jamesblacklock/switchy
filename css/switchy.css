@@ -11,6 +11,10 @@
 	box-sizing: border-box;
 	line-height: initial;
 }
+.switchy *
+{
+	box-sizing: border-box;
+}
 .switchy:focus
 {
 	box-shadow: 0 0 1.5px rgba(35, 95, 221, 1);
