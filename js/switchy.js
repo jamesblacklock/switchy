@@ -136,6 +136,8 @@
 					if( e.which != 1 || switchy.hasClass('disabled') )
 						return false;
 					
+					e.preventDefault();
+
 					switchy.data('switchy').clickPos = e.pageX;
 					switchy.data('switchy').clickOffset = (e.offsetX === undefined) ? e.layerX : e.offsetX;
 					
