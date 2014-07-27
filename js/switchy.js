@@ -14,30 +14,34 @@
 				{
 					var options = $(this).find('.switchy-align');
 					
-					on = $(options[0]).html();
-					off = $(options[1]).html();
+					on = $(options[0]);
+					off = $(options[1]);
 				}
 				else
 				{
 					var options = $(this).children();
 					
 					if(options[0])
-						on = $(options[0]).html();
+						on = $(options[0]);
 					
 					if(options[1])
-						off = $(options[1]).html();
+						off = $(options[1]);
 				}
 				
 				var switchy = $(
 						'<span tabindex="0">' +
 						    '<span class="switchy-slider">' +
-						    	'<span class="switchy-on"><span class="switchy-align">' + on + '</span></span>' +
+						    	'<span class="switchy-on"><span class="switchy-align"></span></span>' +
 								'<span class="switchy-handle">&nbsp;</span>' +
-								'<span class="switchy-off"><span class="switchy-align">' + off + '</span></span>' +
+								'<span class="switchy-off"><span class="switchy-align"></span></span>' +
 						    '</span>' +
 						'</span>');
 				
-				
+				var aligns = switchy.find('.switchy-align');
+
+				$(aligns[0]).append(on);
+				$(aligns[1]).append(off);
+
 				switchy.data('switchy', { eventHandlers: {} });
 				
 				$(this.attributes).each(function()
