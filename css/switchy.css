@@ -1,0 +1,250 @@
+.switchy
+{
+	display: inline-block;
+	border: 1px solid #cccccc;
+	font-size: 14px;
+	border-radius: 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+	vertical-align: middle;
+	box-sizing: border-box;
+	line-height: initial;
+}
+.switchy:focus
+{
+	box-shadow: 0 0 1.5px rgba(35, 95, 221, 1);
+}
+.switchy-slider
+{
+	display: inline-block;
+	position: relative;
+	width: 150%;
+	height: 100%;
+	left: -50%;
+	transition: left 100ms;
+	background-color: #eaeaea;
+}
+.switchy.active .switchy-slider
+{
+	left: 0%;
+}
+.switchy.middle .switchy-slider
+{
+	left: -25%;
+}
+.switchy-on, .switchy-off, .switchy-handle
+{
+	display: inline-block;
+	padding: 6px 8px;
+	line-height: 1.428571429;
+}
+.switchy-on, .switchy-off
+{
+	width: 50%;
+	height: 100%;
+	box-shadow: inset 0 0 8px 0 rgba(0,0,0,.1);
+}
+.switchy-on
+{
+	color: #fff;
+	background-color: #428bca;
+	text-align: left;
+}
+.switchy:focus .switchy-on
+{
+	background-color: #3276b1;
+}
+.switchy.middle .switchy-on
+{
+	background-color: rgba(66,139,202,.5);
+}
+.switchy-off
+{
+	color: #000;
+	background-color: #eaeaea;
+	text-align: right;
+}
+.switchy.disabled .switchy-on,
+.switchy.disabled .switchy-off
+{
+	opacity: .5;
+}
+.switchy-handle
+{
+	background-image: linear-gradient(#fff, #eee);
+	position: absolute;
+	border-radius: 3px;
+	width: 33.3333%;
+	height: 100%;
+	left: 33.3333%;
+	border: 1px solid #cccccc;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
+	z-index: 1;
+}
+.switchy-align
+{
+	display: inline-block;
+	height: 100%;
+	min-width: 1.2em;
+	text-align: center;
+}
+.switchy-xl
+{
+	font-size: 48px;
+	border-radius: 8px;
+}
+.switchy-xl .switchy-handle
+{
+	border-radius: 6px;
+}
+.switchy-xl .switchy-handle
+{
+	box-shadow: 0 0 28px 0 rgba(0,0,0,.2)
+}
+.switchy-xl .switchy-on,
+.switchy-xl .switchy-off,
+.switchy-xl .switchy-handle
+{
+	line-height: 1.1;
+	padding: 16px 14px;
+}
+.switchy-lg
+{
+	font-size: 18px;
+	border-radius: 6px;
+}
+.switchy-lg .switchy-handle
+{
+	border-radius: 4px;
+}
+.switchy-lg .switchy-on,
+.switchy-lg .switchy-off,
+.switchy-lg .switchy-handle
+{
+	line-height: 1.33;
+	padding: 10px 10px;
+}
+.switchy-md
+{
+	font-size: 14px;
+	border-radius: 4px;
+}
+.switchy-md .switchy-handle
+{
+	border-radius: 3px;
+}
+.switchy-md .switchy-on,
+.switchy-md .switchy-off,
+.switchy-md .switchy-handle
+{
+	line-height: 1.428571429;
+	padding: 6px 8px;
+}
+.switchy-sm, .switchy-xs
+{
+	line-height: 1.5;
+	font-size: 12px;
+	border-radius: 3px;
+}
+.switchy-sm .switchy-handle
+{
+	border-radius: 2px;
+}
+.switchy-sm .switchy-on,
+.switchy-sm .switchy-off,
+.switchy-sm .switchy-handle
+{
+	padding: 6px 6px 5px 6px;
+}
+.switchy-xs .switchy-on,
+.switchy-xs .switchy-off,
+.switchy-xs .switchy-handle
+{
+	padding: 2px 5px 1px 5px;
+}
+.switchy-xs .switchy-handle
+{
+	border-radius: 1px;
+}
+.switchy-xs .switchy-align
+{
+	min-width: .8em;
+}
+.switchy.rounded,
+.switchy.rounded .switchy-handle
+{
+	border-radius: 99999px;
+}
+
+
+
+.switchy-primary .switchy-on
+{
+	color: #fff;
+	background-color: #428bca;
+}
+.switchy.switchy-primary:focus .switchy-on
+{
+	background-color: #3276b1;
+}
+.switchy.middle.switchy-primary .switchy-on
+{
+	background-color: rgba(66,139,202,.5);
+}
+
+.switchy-success .switchy-on
+{
+	color: #fff;
+	background-color: #5cb85c;
+}
+.switchy.switchy-success:focus .switchy-on
+{
+	background-color: #449d44;
+}
+.switchy.middle.switchy-success .switchy-on
+{
+	background-color: rgba(92,184,92,.5);
+}
+
+.switchy-info .switchy-on
+{
+	color: #fff;
+	background-color: #5bc0de;
+}
+.switchy.switchy-info:focus .switchy-on
+{
+	background-color: #31b0d5;
+}
+.switchy.middle.switchy-info .switchy-on
+{
+	background-color: rgba(91,192,222,.5);
+}
+
+.switchy-warning .switchy-on
+{
+	color: #fff;
+	background-color: #f0ad4e;
+}
+.switchy.switchy-warning:focus .switchy-on
+{
+	background-color: #ec971f;
+}
+.switchy.middle.switchy-warning .switchy-on
+{
+	background-color: rgba(240,173,78,.5);
+}
+
+.switchy-danger .switchy-on
+{
+	color: #fff;
+	background-color: #d9534f;
+}
+.switchy.switchy-danger:focus .switchy-on
+{
+	background-color: #c9302c;
+}
+.switchy.middle.switchy-danger .switchy-on
+{
+	background-color: rgba(217,83,79,.5);
+}
