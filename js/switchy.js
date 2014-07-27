@@ -68,6 +68,7 @@
 						return false;
 					
 					e.preventDefault();
+					e.stopPropagation();
 					
 					if(switchy.data('switchy').skipClick)
 					{
@@ -86,6 +87,7 @@
 				function onDragStart(e)
 				{
 					e.preventDefault();
+					e.stopPropagation();
 					
 					switchy.data('switchy').skipClick = true;
 						
@@ -116,6 +118,7 @@
 				function onDrag(e)
 				{
 					e.preventDefault();
+					e.stopPropagation();
 					
 					var data = switchy.data('switchy');
 					
@@ -135,8 +138,11 @@
 					
 					switchy.data('switchy').clickPos = e.pageX;
 					switchy.data('switchy').clickOffset = (e.offsetX === undefined) ? e.layerX : e.offsetX;
+					
+					var slider = switchy.find('.switchy-slider');
+
 					switchy.data('switchy').initialPos =
-							Number( switchy.find('.switchy-slider').css('left').slice(0, -2) );
+							slider.position().left - slider.parent().position().left;
 					
 					$(document).on('mousemove', onDragStart);
 					

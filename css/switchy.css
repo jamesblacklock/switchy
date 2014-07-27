@@ -10,6 +10,7 @@
 	vertical-align: middle;
 	box-sizing: border-box;
 	line-height: initial;
+	outline: 0;
 }
 .switchy *
 {
@@ -23,9 +24,9 @@
 {
 	display: inline-block;
 	position: relative;
-	width: 150%;
+	width: 151.6%;
 	height: 100%;
-	left: -50%;
+	left: -51%;
 	transition: left 100ms;
 	background-color: #eaeaea;
 }
