@@ -24,9 +24,9 @@
 {
 	display: inline-block;
 	position: relative;
-	width: 151.6%;
+	width: 150%;
 	height: 100%;
-	left: -51%;
+	left: -50%;
 	transition: left 100ms;
 	background-color: #eaeaea;
 }
@@ -252,4 +252,17 @@
 .switchy.middle.switchy-danger .switchy-on
 {
 	background-color: rgba(217,83,79,.5);
+}
+
+
+/* this section added to fix stupid safari rendering issues */
+.switchy-slider
+{
+	width: 151.6%;
+	left: -51%;
+}
+.switchy-xs .switchy-handle
+{
+	width: 34%;
+	margin-left: 1px;
 }
