@@ -14,8 +14,8 @@
 				{
 					var options = $(this).find('.switchy-align');
 
-					on = $(options[0]);
-					off = $(options[1]);
+					on = $(options[0]).children();
+					off = $(options[1]).children();
 				}
 				else
 				{
@@ -42,14 +42,11 @@
 				$(aligns[0]).append(on);
 				$(aligns[1]).append(off);
 
-				switchy.data('switchy', { eventHandlers: {} });
+				switchy.data( 'switchy', {} );
 
 				$(this.attributes).each(function()
 				{
-					if(this.name == 'onclick')
-						switchy.data('switchy').eventHandlers.onclick = this.value;
-					else
-						switchy.attr(this.name, this.value);
+					switchy.attr(this.name, this.value);
 				});
 
 
@@ -58,7 +55,7 @@
 				
 				var width = Math.max( switchy.find('.switchy-on .switchy-align').width(),
 								  switchy.find('.switchy-off .switchy-align').width() );
-
+				
 				switchy.find('.switchy-align').width(width);
 
 
@@ -67,22 +64,19 @@
 				{
 					if( e.which != 1 || switchy.hasClass('disabled') )
 						return false;
-
+					
 					e.preventDefault();
 					e.stopPropagation();
-
+					
 					if(switchy.data('switchy').skipClick)
 					{
 						delete switchy.data('switchy').skipClick;
 						return;
 					}
-
+					
 					switchy.removeClass('middle').toggleClass('active');
-
-					var onclick = switchy.data('switchy').eventHandlers.onclick;
-
-					if(onclick)
-						eval(onclick);
+					
+					switchy.trigger('change.switchy');
 				}
 
 				function onDragStart(e)
@@ -101,12 +95,17 @@
 						e.preventDefault();
 						
 						var slider = switchy.find('.switchy-slider');
+						var hasClassActive = switchy.hasClass('active');
 						
 						var x = switchy.find('.switchy-slider').css('transform').match(/-?[0-9\.]+/g)[4];
 						if(x < -switchy.width()/4)
 							switchy.removeClass('active');
 						else
 							switchy.addClass('active');
+						
+						if(switchy.hasClass('active') != hasClassActive)
+							switchy.trigger('change.switchy');
+						
 						
 						slider.css('transition', '').css('transform', '');
 						

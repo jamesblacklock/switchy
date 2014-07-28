@@ -52,6 +52,14 @@
 	padding: 6px 8px;
 	line-height: 1.428571429;
 }
+.switchy-on
+{
+	padding: 6px 6px 6px 10px;
+}
+.switchy-off
+{
+	padding: 6px 10px 6px 6px;
+}
 .switchy-on, .switchy-off
 {
 	width: 50%;
@@ -88,11 +96,11 @@
 	background-color: white;
 	position: absolute;
 	border-radius: 3px;
+	padding: 6px 8px;
 	width: 33.3333%;
 	height: 100%;
 	left: 33.3333%;
 	box-shadow: 0 0 12px 0 rgba(0,0,0,.1);
-	z-index: 1;
 }
 .switchy-align
 {
@@ -110,16 +118,16 @@
 .switchy-xl .switchy-handle
 {
 	border-radius: 5px;
+	box-shadow: 0 0 28px 0 rgba(0,0,0,.2);
+	padding: 16px 20px;
 }
-.switchy-xl .switchy-handle
+.switchy-xl .switchy-on
 {
-	box-shadow: 0 0 28px 0 rgba(0,0,0,.2)
+	padding: 16px 16px 16px 24px;
 }
-.switchy-xl .switchy-on,
-.switchy-xl .switchy-off,
-.switchy-xl .switchy-handle
+.switchy-xl .switchy-off
 {
-	padding: 16px 14px;
+	padding: 16px 24px 16px 16px;
 }
 .switchy-lg
 {
@@ -131,11 +139,17 @@
 {
 	border-radius: 5px;
 }
-.switchy-lg .switchy-on,
-.switchy-lg .switchy-off,
+.switchy-lg .switchy-on
+{
+	padding: 10px 8px 10px 12px;
+}
+.switchy-lg .switchy-off
+{
+	padding: 10px 12px 10px 8px;
+}
 .switchy-lg .switchy-handle
 {
-	padding: 10px 10px;
+	padding: 10px 10px 10px 10px;
 }
 .switchy-md
 {
@@ -143,15 +157,18 @@
 	font-size: 14px;
 	border-radius: 4px;
 }
-.switchy-md .switchy-handle
+.switchy-md .switchy-on
 {
-	border-radius: 3px;
+	padding: 6px 6px 6px 10px;
 }
-.switchy-md .switchy-on,
-.switchy-md .switchy-off,
+.switchy-md .switchy-off
+{
+	padding: 6px 10px 6px 6px;
+}
 .switchy-md .switchy-handle
 {
 	padding: 6px 8px;
+	border-radius: 3px;
 }
 .switchy-sm, .switchy-xs
 {
@@ -164,17 +181,29 @@
 {
 	border-radius: 2px;
 }
-.switchy-sm .switchy-on,
-.switchy-sm .switchy-off,
+.switchy-sm .switchy-on
+{
+	padding: 6px 5px 5px 7px;
+}
+.switchy-sm .switchy-off
+{
+	padding: 6px 7px 5px 5px;
+}
 .switchy-sm .switchy-handle
 {
 	padding: 6px 6px 5px 6px;
 }
-.switchy-xs .switchy-on,
-.switchy-xs .switchy-off,
+.switchy-xs .switchy-on
+{
+	padding: 2px 2px 1px 5px;
+}
+.switchy-xs .switchy-off
+{
+	padding: 2px 5px 1px 2px;
+}
 .switchy-xs .switchy-handle
 {
-	padding: 2px 5px 1px 5px;
+	padding: 2px 3px 1px 3px;
 }
 .switchy-xs .switchy-align
 {
