@@ -9,11 +9,11 @@
 	cursor: pointer;
 	vertical-align: middle;
 	box-sizing: border-box;
-	line-height: initial;
 	transition: border-color 100ms;
 	outline: 0;
 	text-indent: 0;
 	line-height: 1.428571429;
+	transform: rotate(0deg);
 }
 .switchy.active
 {
@@ -33,18 +33,18 @@
 	position: relative;
 	width: 150%;
 	height: 100%;
-	left: -50%;
-	transition: left 100ms;
+	transform: translateX(-33.3333%);
+	transition: transform 100ms;
 	background-color: #eaeaea;
 	vertical-align: middle;
 }
 .switchy.active .switchy-slider
 {
-	left: 0%;
+	transform: translateX(0%);
 }
 .switchy.middle .switchy-slider
 {
-	left: -25%;
+	transform: translateX(-16.6666%);
 }
 .switchy-on, .switchy-off, .switchy-handle
 {
@@ -87,7 +87,7 @@
 {
 	background-color: white;
 	position: absolute;
-	border-radius: 2px;
+	border-radius: 3px;
 	width: 33.3333%;
 	height: 100%;
 	left: 33.3333%;
@@ -109,7 +109,7 @@
 }
 .switchy-xl .switchy-handle
 {
-	border-radius: 4px;
+	border-radius: 5px;
 }
 .switchy-xl .switchy-handle
 {
@@ -129,7 +129,7 @@
 }
 .switchy-lg .switchy-handle
 {
-	border-radius: 4px;
+	border-radius: 5px;
 }
 .switchy-lg .switchy-on,
 .switchy-lg .switchy-off,
@@ -145,7 +145,7 @@
 }
 .switchy-md .switchy-handle
 {
-	border-radius: 2px;
+	border-radius: 3px;
 }
 .switchy-md .switchy-on,
 .switchy-md .switchy-off,
@@ -159,7 +159,8 @@
 	font-size: 12px;
 	border-radius: 3px;
 }
-.switchy-sm .switchy-handle
+.switchy-sm .switchy-handle,
+.switchy-xs .switchy-handle
 {
 	border-radius: 2px;
 }
@@ -174,10 +175,6 @@
 .switchy-xs .switchy-handle
 {
 	padding: 2px 5px 1px 5px;
-}
-.switchy-xs .switchy-handle
-{
-	border-radius: 1px;
 }
 .switchy-xs .switchy-align
 {
@@ -283,7 +280,7 @@
 
 
 /* this section added to fix stupid safari rendering issues */
-.switchy-slider:not(*:root)
+/*.switchy-slider:not(*:root)
 {
 	width: 151.6%;
 	left: -51%;
@@ -292,4 +289,4 @@
 .switchy-xs .switchy-handle:not(*:root)
 {
 	width: 35%;
-}
+}*/
