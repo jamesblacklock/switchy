@@ -64,7 +64,7 @@
 {
 	width: 50%;
 	height: 100%;
-	
+	min-width: 32px;
 }
 .switchy-on
 {
@@ -106,7 +106,6 @@
 {
 	display: inline-block;
 	height: 100%;
-	min-width: 1.2em;
 	text-align: center;
 }
 .switchy-xl
@@ -119,15 +118,19 @@
 {
 	border-radius: 5px;
 	box-shadow: 0 0 28px 0 rgba(0,0,0,.2);
-	padding: 16px 20px;
 }
 .switchy-xl .switchy-on
 {
-	padding: 16px 16px 16px 24px;
+	padding: 16px 0 16px 24px;
 }
 .switchy-xl .switchy-off
 {
-	padding: 16px 24px 16px 16px;
+	padding: 16px 24px 16px 0;
+}
+.switchy-xl .switchy-on,
+.switchy-xl .switchy-off
+{
+	min-width: 74px;
 }
 .switchy-lg
 {
@@ -141,15 +144,16 @@
 }
 .switchy-lg .switchy-on
 {
-	padding: 10px 8px 10px 12px;
+	padding: 10px 0 10px 16px;
 }
 .switchy-lg .switchy-off
 {
-	padding: 10px 12px 10px 8px;
+	padding: 10px 16px 10px 0;
 }
-.switchy-lg .switchy-handle
+.switchy-lg .switchy-on,
+.switchy-lg .switchy-off
 {
-	padding: 10px 10px 10px 10px;
+	min-width: 45px;
 }
 .switchy-md
 {
@@ -159,15 +163,19 @@
 }
 .switchy-md .switchy-on
 {
-	padding: 6px 6px 6px 10px;
+	padding: 6px 0 6px 10px;
 }
 .switchy-md .switchy-off
 {
-	padding: 6px 10px 6px 6px;
+	padding: 6px 10px 6px 0;
+}
+.switchy-md .switchy-on,
+.switchy-md .switchy-off
+{
+	min-width: 32px;
 }
 .switchy-md .switchy-handle
 {
-	padding: 6px 8px;
 	border-radius: 3px;
 }
 .switchy-sm, .switchy-xs
@@ -183,31 +191,29 @@
 }
 .switchy-sm .switchy-on
 {
-	padding: 6px 5px 5px 7px;
+	padding: 6px 0 5px 9px;
 }
 .switchy-sm .switchy-off
 {
-	padding: 6px 7px 5px 5px;
+	padding: 6px 9px 5px 0;
 }
-.switchy-sm .switchy-handle
+.switchy-sm .switchy-on,
+.switchy-sm .switchy-off
 {
-	padding: 6px 6px 5px 6px;
+	min-width: 28px;
 }
 .switchy-xs .switchy-on
 {
-	padding: 2px 2px 1px 5px;
+	padding: 2px 0 1px 5px;
 }
 .switchy-xs .switchy-off
 {
-	padding: 2px 5px 1px 2px;
+	padding: 2px 5px 1px 0;
 }
-.switchy-xs .switchy-handle
+.switchy-xs .switchy-on,
+.switchy-xs .switchy-off
 {
-	padding: 2px 3px 1px 3px;
-}
-.switchy-xs .switchy-align
-{
-	min-width: .8em;
+	min-width: 20px;
 }
 .switchy.rounded,
 .switchy.rounded .switchy-handle
