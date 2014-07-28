@@ -9,25 +9,25 @@
 			{
 				var on = '';
 				var off = '';
-				
+
 				if( $(this).children().hasClass('switchy-slider') )
 				{
 					var options = $(this).find('.switchy-align');
-					
+
 					on = $(options[0]);
 					off = $(options[1]);
 				}
 				else
 				{
 					var options = $(this).children();
-					
+
 					if(options[0])
 						on = $(options[0]);
-					
+
 					if(options[1])
 						off = $(options[1]);
 				}
-				
+
 				var switchy = $(
 						'<span tabindex="0">' +
 						    '<span class="switchy-slider">' +
@@ -36,14 +36,14 @@
 								'<span class="switchy-off"><span class="switchy-align"></span></span>' +
 						    '</span>' +
 						'</span>');
-				
+
 				var aligns = switchy.find('.switchy-align');
 
 				$(aligns[0]).append(on);
 				$(aligns[1]).append(off);
 
 				switchy.data('switchy', { eventHandlers: {} });
-				
+
 				$(this.attributes).each(function()
 				{
 					if(this.name == 'onclick')
@@ -51,62 +51,64 @@
 					else
 						switchy.attr(this.name, this.value);
 				});
-				
-				
+
+
 				switchy.addClass('switchy');
 				$(this).replaceWith(switchy);
+				
 				var width = Math.max( switchy.find('.switchy-on .switchy-align').width(),
 								  switchy.find('.switchy-off .switchy-align').width() );
-				
+
 				switchy.find('.switchy-align').width(width);
 
 
-				
+
 				function onClick(e)
 				{
 					if( e.which != 1 || switchy.hasClass('disabled') )
 						return false;
-					
+
 					e.preventDefault();
 					e.stopPropagation();
-					
+
 					if(switchy.data('switchy').skipClick)
 					{
 						delete switchy.data('switchy').skipClick;
 						return;
 					}
-					
+
 					switchy.removeClass('middle').toggleClass('active');
-					
+
 					var onclick = switchy.data('switchy').eventHandlers.onclick;
-					
+
 					if(onclick)
 						eval(onclick);
 				}
-				
+
 				function onDragStart(e)
 				{
 					e.preventDefault();
 					e.stopPropagation();
 					
 					switchy.data('switchy').skipClick = true;
-						
+					
 					$(document).off('mousemove').on('mousemove', onDrag);
 					
 					switchy.find('.switchy-slider').css('transition', 'initial');
-										
+					
 					$(document).one('mouseup', function(e)
 					{
 						e.preventDefault();
 						
 						var slider = switchy.find('.switchy-slider');
 						
-						if(slider.css('left').slice(0, -2) < -switchy.width()/4)
+						var x = switchy.find('.switchy-slider').css('transform').match(/-?[0-9\.]+/g)[4];
+						if(x < -switchy.width()/4)
 							switchy.removeClass('active');
 						else
 							switchy.addClass('active');
 						
-						slider.css('transition', '').css('left', '');
+						slider.css('transition', '').css('transform', '');
 						
 						switchy.one('mousemove', function()
 						{
@@ -122,13 +124,16 @@
 					
 					var data = switchy.data('switchy');
 					
-					var dragDelta = e.pageX - data.clickPos + data.initialPos;
+					var dragDelta = e.pageX - data.clickPos;
 					var width = switchy.find('.switchy-slider').width();
 					
+					if( !switchy.hasClass('active') )
+						dragDelta -= width/3;
+
 					dragDelta = Math.max(dragDelta, -width/3);
 					dragDelta = Math.min(dragDelta, 0);
 					
-					switchy.find('.switchy-slider').css('left', dragDelta);
+					switchy.find('.switchy-slider').css('transform', 'translateX(' + dragDelta + 'px)');
 				}
 				
 				function onMouseDown(e)
@@ -140,9 +145,6 @@
 					switchy.data('switchy').clickOffset = (e.offsetX === undefined) ? e.layerX : e.offsetX;
 					
 					var slider = switchy.find('.switchy-slider');
-
-					switchy.data('switchy').initialPos =
-							slider.position().left - slider.parent().position().left;
 					
 					$(document).on('mousemove', onDragStart);
 					
@@ -156,7 +158,7 @@
 				switchy.on('click', onClick);
 			});
 	};
-	
+
 	$.fn.switchy.set = function(set)
 	{
 		if(set === true || set === 'on')
@@ -166,6 +168,6 @@
 		else if(set === 'middle')
 			this.removeClass('active').addClass('middle');
 	};
-	
+
 	$('[data-provide=switchy]').switchy();
 }(jQuery));
