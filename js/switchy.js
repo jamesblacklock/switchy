@@ -27,7 +27,7 @@
 					if(options[1])
 						off = $(options[1]);
 				}
-
+				
 				var switchy = $(
 						'<span tabindex="0">' +
 						    '<span class="switchy-slider">' +
@@ -48,18 +48,25 @@
 				{
 					switchy.attr(this.name, this.value);
 				});
-
+				
+				switchy.on('show', function(){"console.log('resize')"});
+				
 
 				switchy.addClass('switchy');
-				$(this).replaceWith(switchy);
+				
+				var hidden = $('<div style="visibility:hidden">');
+				hidden.append(switchy);
+				$('body').append(hidden);
 				
 				var width = Math.max( switchy.find('.switchy-on .switchy-align').width(),
 								  switchy.find('.switchy-off .switchy-align').width() );
 				
+				hidden.remove();
+				
 				switchy.find('.switchy-align').width(width);
-
-
-
+				
+				$(this).replaceWith(switchy);
+				
 				function onClick(e)
 				{
 					if( e.which != 1 || switchy.hasClass('disabled') )
