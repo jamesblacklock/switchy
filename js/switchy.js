@@ -42,14 +42,10 @@
 				$(aligns[0]).append(on);
 				$(aligns[1]).append(off);
 
-				switchy.data( 'switchy', {} );
-
 				$(this.attributes).each(function()
 				{
 					switchy.attr(this.name, this.value);
 				});
-				
-				switchy.on('show', function(){"console.log('resize')"});
 				
 
 				switchy.addClass('switchy');
@@ -66,6 +62,11 @@
 				switchy.find('.switchy-align').width(width);
 				
 				$(this).replaceWith(switchy);
+				
+				
+				
+				switchy.data( 'switchy', {} );
+				
 				
 				function onClick(e)
 				{
