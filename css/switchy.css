@@ -10,7 +10,12 @@
 	vertical-align: middle;
 	box-sizing: border-box;
 	line-height: initial;
+	transition: border-color 100ms;
 	outline: 0;
+}
+.switchy.active
+{
+	border-color: #428bca;
 }
 .switchy *
 {
@@ -48,7 +53,7 @@
 {
 	width: 50%;
 	height: 100%;
-	box-shadow: inset 0 0 8px 0 rgba(0,0,0,.1);
+	
 }
 .switchy-on
 {
@@ -77,14 +82,13 @@
 }
 .switchy-handle
 {
-	background-image: linear-gradient(#fff, #eee);
+	background-color: white;
 	position: absolute;
 	border-radius: 2px;
 	width: 33.3333%;
 	height: 100%;
 	left: 33.3333%;
-	border: 1px solid #eee;
-	box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
+	box-shadow: 0 0 12px 0 rgba(0,0,0,.1);
 	z-index: 1;
 }
 .switchy-align
@@ -184,6 +188,10 @@
 
 
 
+.switchy-primary.active
+{
+	border-color: #428bca;
+}
 .switchy-primary .switchy-on
 {
 	color: #fff;
@@ -198,6 +206,10 @@
 	background-color: rgba(66,139,202,.5);
 }
 
+.switchy-success.active
+{
+	border-color: #449d44;
+}
 .switchy-success .switchy-on
 {
 	color: #fff;
@@ -212,6 +224,10 @@
 	background-color: rgba(92,184,92,.5);
 }
 
+.switchy-info.active
+{
+	border-color: #31b0d5;
+}
 .switchy-info .switchy-on
 {
 	color: #fff;
@@ -226,6 +242,10 @@
 	background-color: rgba(91,192,222,.5);
 }
 
+.switchy-warning.active
+{
+	border-color: #ec971f;
+}
 .switchy-warning .switchy-on
 {
 	color: #fff;
@@ -240,6 +260,10 @@
 	background-color: rgba(240,173,78,.5);
 }
 
+.switchy-danger.active
+{
+	border-color: #c9302c;
+}
 .switchy-danger .switchy-on
 {
 	color: #fff;
@@ -256,12 +280,13 @@
 
 
 /* this section added to fix stupid safari rendering issues */
-.switchy-slider
+.switchy-slider:not(*:root)
 {
 	width: 151.6%;
 	left: -51%;
+	transition: left 200ms;
 }
-.switchy-xs .switchy-handle
+.switchy-xs .switchy-handle:not(*:root)
 {
 	width: 35%;
 }
