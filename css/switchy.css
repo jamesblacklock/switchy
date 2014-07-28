@@ -121,11 +121,11 @@
 }
 .switchy-xl .switchy-on
 {
-	padding: 16px 0 16px 24px;
+	padding: 16px 18px 16px 24px;
 }
 .switchy-xl .switchy-off
 {
-	padding: 16px 24px 16px 0;
+	padding: 16px 24px 16px 18px;
 }
 .switchy-xl .switchy-on,
 .switchy-xl .switchy-off
@@ -144,11 +144,11 @@
 }
 .switchy-lg .switchy-on
 {
-	padding: 10px 0 10px 16px;
+	padding: 10px 8px 10px 16px;
 }
 .switchy-lg .switchy-off
 {
-	padding: 10px 16px 10px 0;
+	padding: 10px 16px 10px 8px;
 }
 .switchy-lg .switchy-on,
 .switchy-lg .switchy-off
@@ -163,11 +163,11 @@
 }
 .switchy-md .switchy-on
 {
-	padding: 6px 0 6px 10px;
+	padding: 6px 6px 6px 10px;
 }
 .switchy-md .switchy-off
 {
-	padding: 6px 10px 6px 0;
+	padding: 6px 10px 6px 6px;
 }
 .switchy-md .switchy-on,
 .switchy-md .switchy-off
@@ -191,11 +191,11 @@
 }
 .switchy-sm .switchy-on
 {
-	padding: 6px 0 5px 9px;
+	padding: 6px 5px 5px 9px;
 }
 .switchy-sm .switchy-off
 {
-	padding: 6px 9px 5px 0;
+	padding: 6px 9px 5px 5px;
 }
 .switchy-sm .switchy-on,
 .switchy-sm .switchy-off
@@ -204,11 +204,11 @@
 }
 .switchy-xs .switchy-on
 {
-	padding: 2px 0 1px 5px;
+	padding: 2px 3px 1px 5px;
 }
 .switchy-xs .switchy-off
 {
-	padding: 2px 5px 1px 0;
+	padding: 2px 5px 1px 3px;
 }
 .switchy-xs .switchy-on,
 .switchy-xs .switchy-off
