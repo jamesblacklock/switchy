@@ -29,7 +29,7 @@
 }
 .switchy-slider
 {
-	display: inline-block;
+	display: block;
 	position: relative;
 	width: 150%;
 	height: 100%;
