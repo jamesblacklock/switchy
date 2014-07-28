@@ -12,6 +12,7 @@
 	line-height: initial;
 	transition: border-color 100ms;
 	outline: 0;
+	text-indent: 0;
 }
 .switchy.active
 {
