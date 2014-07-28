@@ -35,6 +35,7 @@
 	left: -50%;
 	transition: left 100ms;
 	background-color: #eaeaea;
+	vertical-align: middle;
 }
 .switchy.active .switchy-slider
 {
@@ -101,6 +102,7 @@
 }
 .switchy-xl
 {
+	line-height: 1.1;
 	font-size: 30px;
 	border-radius: 6px;
 }
@@ -116,11 +118,11 @@
 .switchy-xl .switchy-off,
 .switchy-xl .switchy-handle
 {
-	line-height: 1.1;
 	padding: 16px 14px;
 }
 .switchy-lg
 {
+	line-height: 1.33;
 	font-size: 18px;
 	border-radius: 6px;
 }
@@ -132,11 +134,11 @@
 .switchy-lg .switchy-off,
 .switchy-lg .switchy-handle
 {
-	line-height: 1.33;
 	padding: 10px 10px;
 }
 .switchy-md
 {
+	line-height: 1.428571429;
 	font-size: 14px;
 	border-radius: 4px;
 }
@@ -148,7 +150,6 @@
 .switchy-md .switchy-off,
 .switchy-md .switchy-handle
 {
-	line-height: 1.428571429;
 	padding: 6px 8px;
 }
 .switchy-sm, .switchy-xs
