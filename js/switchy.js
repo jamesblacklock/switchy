@@ -49,6 +49,11 @@
 				
 
 				switchy.addClass('switchy');
+
+				var isSafari = (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1);
+
+				if(isSafari)
+					switchy.addClass('switchy-safari');
 				
 				var hidden = $('<div style="visibility:hidden">');
 				hidden.append(switchy);
@@ -66,6 +71,9 @@
 				
 				
 				switchy.data( 'switchy', {} );
+
+				if(isSafari)
+					switchy.data('switchy').safari = true;
 				
 				
 				function onClick(e)
