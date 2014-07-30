@@ -326,5 +326,9 @@
 }
 .switchy-safari .switchy-slider
 {
-	width: 151.6%;
+	width: 152%;
+}
+.switchy-safari.switchy-xs .switchy-slider
+{
+	width: 153%;
 }
