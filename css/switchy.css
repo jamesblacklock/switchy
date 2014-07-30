@@ -13,7 +13,7 @@
 	outline: 0;
 	text-indent: 0;
 	line-height: 1.428571429;
-	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	transform: rotate(0deg);
 }
 .switchy.active
 {
@@ -320,6 +320,10 @@
 
 
 /* this section added to fix stupid safari rendering issues */
+.switchy-safari
+{
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+}
 .switchy-safari .switchy-slider
 {
 	width: 151.6%;
