@@ -1,7 +1,7 @@
 switchy
 =======
 
-A stylish on/off switch HTML5 component &amp; jQuery plugin.
+A stylish on/off switch HTML5 component &amp; jQuery plugin.  
 Designed for, but not dependent on, Bootstrap.
 
 Tested on:
